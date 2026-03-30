@@ -1,0 +1,177 @@
+/* ProofDrop — Light Theme (B2)
+ * Generated: 2026-03-28
+ * Primary: #2563EB (hue 220°, blue-slate)
+ * DO NOT import conditionally — always load alongside theme-dark.css
+ */
+
+@layer base {
+  :root {
+    /* === Neutral === */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    /* === Brand === */
+    --primary: 220 91% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 28% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* === Semantic === */
+    --destructive: 0 86% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 72% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* === State === */
+    --muted: 215 20% 95%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 215 20% 95%;
+    --accent-foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 220 91% 54%;
+
+    /* === Surface === */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* === Layout === */
+    --radius: 0.5rem;
+
+    /* === ProofDrop Custom === */
+    --receipt-bg: 215 28% 97%;
+    --receipt-border: 220 60% 88%;
+    --proof-seal-pass: 142 72% 36%;
+    --proof-seal-fail: 0 86% 50%;
+    --hash-bg: 220 50% 95%;
+    --hash-fg: 222 47% 11%;
+    --audit-dot-pass: 142 72% 36%;
+    --audit-dot-fail: 0 86% 50%;
+    --shimmer-from: 215 20% 95%;
+    --shimmer-to: 220 50% 95%;
+  }
+}
+
+/* === ProofDrop Utility Classes === */
+@layer components {
+  .receipt-card {
+    background-color: hsl(var(--receipt-bg));
+    border: 1px solid hsl(var(--receipt-border));
+    border-radius: var(--radius);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .proof-seal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+    background-color: hsl(var(--proof-seal-pass) / 0.1);
+    color: hsl(var(--proof-seal-pass));
+    border: 2px solid hsl(var(--proof-seal-pass));
+  }
+
+  .proof-seal--fail {
+    background-color: hsl(var(--proof-seal-fail) / 0.1);
+    color: hsl(var(--proof-seal-fail));
+    border-color: hsl(var(--proof-seal-fail));
+  }
+
+  .receipt-hash {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.875rem;
+    background-color: hsl(var(--hash-bg));
+    color: hsl(var(--hash-fg));
+    padding: 0.125rem 0.5rem;
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  .receipt-hash--highlighted {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    padding: 0.25rem 0.75rem;
+    border-radius: calc(var(--radius) - 2px);
+    border: 1px solid hsl(var(--primary) / 0.2);
+  }
+
+  .audit-trail {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .audit-trail-item {
+    display: flex;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    position: relative;
+  }
+
+  .audit-trail-item::before {
+    content: '';
+    position: absolute;
+    left: 0.4375rem;
+    top: 1rem;
+    bottom: 0;
+    width: 1px;
+    background-color: hsl(var(--border));
+  }
+
+  .audit-trail-item:last-child::before {
+    display: none;
+  }
+
+  .status-pass-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success) / 0.2);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .status-fail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: hsl(var(--destructive) / 0.1);
+    color: hsl(var(--destructive));
+    border: 1px solid hsl(var(--destructive) / 0.2);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 200% center; }
+    50% { background-position: 0% center; }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--shimmer-from)) 0%,
+      hsl(var(--shimmer-to)) 50%,
+      hsl(var(--shimmer-from)) 100%
+    );
+    background-size: 200% 100%;
+  }
+}

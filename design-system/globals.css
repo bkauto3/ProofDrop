@@ -1,0 +1,68 @@
+/* ProofDrop — Global Styles
+ * Import this from app/globals.css
+ * @import '../design-system/globals.css'
+ */
+
+@import './theme-light.css';
+@import './theme-dark.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-shimmer {
+      animation: none;
+      background: hsl(var(--shimmer-from));
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Frosted glass nav pattern */
+  .nav-frosted {
+    @apply sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md;
+    -webkit-backdrop-filter: blur(12px);
+    supports: (backdrop-filter: blur(1px)) {
+      @apply bg-background/60;
+    }
+  }
+
+  /* Print styles for receipt page */
+  @media print {
+    .nav-frosted,
+    .site-footer,
+    .no-print {
+      display: none !important;
+    }
+
+    .receipt-card {
+      box-shadow: none;
+      border: 1px solid #e2e8f0;
+    }
+
+    body {
+      background: white;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "brand": "ProofDrop",
+  "generated_at": "2026-03-28",
+  "phase": "A2-token-foundation",
+  "primary_hue": 220,
+  "primary_hex": "#2563EB",
+  "token_groups": {
+    "neutral": {
+      "--background": { "light": "210 40% 98%", "dark": "222 47% 8%", "type": "hsl", "hex_light": "#F8FAFC", "hex_dark": "#0F172A" },
+      "--foreground": { "light": "222 47% 11%", "dark": "210 40% 98%", "type": "hsl", "hex_light": "#0F172A", "hex_dark": "#F8FAFC" }
+    },
+    "brand": {
+      "--primary": { "light": "220 91% 54%", "dark": "220 91% 60%", "type": "hsl", "hex_light": "#2563EB", "hex_dark": "#3B82F6" },
+      "--primary-foreground": { "light": "0 0% 100%", "dark": "0 0% 100%", "type": "hsl", "hex_light": "#FFFFFF", "hex_dark": "#FFFFFF" },
+      "--secondary": { "light": "215 28% 96%", "dark": "222 47% 14%", "type": "hsl", "hex_light": "#EFF6FF", "hex_dark": "#1E293B" },
+      "--secondary-foreground": { "light": "222 47% 11%", "dark": "210 40% 98%", "type": "hsl", "hex_light": "#0F172A", "hex_dark": "#F8FAFC" }
+    },
+    "semantic": {
+      "--destructive": { "light": "0 86% 50%", "dark": "0 72% 50%", "type": "hsl", "hex_light": "#DC2626", "hex_dark": "#EF4444" },
+      "--destructive-foreground": { "light": "0 0% 100%", "dark": "0 0% 100%", "type": "hsl", "hex_light": "#FFFFFF", "hex_dark": "#FFFFFF" },
+      "--success": { "light": "142 72% 36%", "dark": "142 64% 44%", "type": "hsl", "hex_light": "#16A34A", "hex_dark": "#22C55E" },
+      "--success-foreground": { "light": "0 0% 100%", "dark": "0 0% 100%", "type": "hsl", "hex_light": "#FFFFFF", "hex_dark": "#FFFFFF" },
+      "--warning": { "light": "38 92% 50%", "dark": "38 92% 56%", "type": "hsl", "hex_light": "#D97706", "hex_dark": "#F59E0B" },
+      "--warning-foreground": { "light": "0 0% 100%", "dark": "0 0% 8%", "type": "hsl" },
+      "--ring": { "light": "220 91% 54%", "dark": "220 91% 60%", "type": "hsl" }
+    },
+    "state": {
+      "--muted": { "light": "215 20% 95%", "dark": "222 47% 14%", "type": "hsl", "hex_light": "#F1F5F9", "hex_dark": "#1E293B" },
+      "--muted-foreground": { "light": "215 16% 47%", "dark": "215 20% 65%", "type": "hsl", "hex_light": "#64748B", "hex_dark": "#94A3B8" },
+      "--accent": { "light": "215 20% 95%", "dark": "222 47% 14%", "type": "hsl" },
+      "--accent-foreground": { "light": "222 47% 11%", "dark": "210 40% 98%", "type": "hsl" },
+      "--border": { "light": "214 32% 91%", "dark": "222 47% 18%", "type": "hsl", "hex_light": "#E2E8F0", "hex_dark": "#1E3A5F" },
+      "--input": { "light": "214 32% 91%", "dark": "222 47% 18%", "type": "hsl" },
+      "--popover": { "light": "0 0% 100%", "dark": "222 47% 10%", "type": "hsl" },
+      "--popover-foreground": { "light": "222 47% 11%", "dark": "210 40% 98%", "type": "hsl" },
+      "--card": { "light": "0 0% 100%", "dark": "222 47% 10%", "type": "hsl", "hex_light": "#FFFFFF", "hex_dark": "#131C2E" },
+      "--card-foreground": { "light": "222 47% 11%", "dark": "210 40% 98%", "type": "hsl" },
+      "--radius": { "light": "0.5rem", "dark": "0.5rem", "type": "dimension" }
+    },
+    "proofdrop_custom": {
+      "--receipt-bg": { "light": "215 28% 97%", "dark": "222 47% 9%", "type": "hsl", "note": "Receipt card background" },
+      "--receipt-border": { "light": "220 60% 88%", "dark": "220 47% 22%", "type": "hsl", "note": "Receipt card border — blue-tinted" },
+      "--proof-seal-pass": { "light": "142 72% 36%", "dark": "142 64% 44%", "type": "hsl", "note": "PASS status seal (green)" },
+      "--proof-seal-fail": { "light": "0 86% 50%", "dark": "0 72% 50%", "type": "hsl", "note": "FAIL status seal (red)" },
+      "--hash-bg": { "light": "220 50% 95%", "dark": "220 47% 14%", "type": "hsl", "note": "Hash/receipt ID highlight background" },
+      "--hash-fg": { "light": "222 47% 11%", "dark": "210 40% 92%", "type": "hsl", "note": "Hash/receipt ID text color" },
+      "--audit-dot-pass": { "light": "142 72% 36%", "dark": "142 64% 44%", "type": "hsl" },
+      "--audit-dot-fail": { "light": "0 86% 50%", "dark": "0 72% 50%", "type": "hsl" },
+      "--shimmer-from": { "light": "215 20% 95%", "dark": "222 47% 14%", "type": "hsl" },
+      "--shimmer-to": { "light": "220 50% 95%", "dark": "220 47% 20%", "type": "hsl" }
+    }
+  }
+}

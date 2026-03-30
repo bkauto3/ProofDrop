@@ -1,0 +1,172 @@
+{
+  "brand": "ProofDrop",
+  "generated_at": "2026-03-28",
+  "phase": "A1-component-inventory",
+  "components": [
+    {
+      "name": "Button",
+      "shadcn_version": "current",
+      "radix_primitive": "none (native button)",
+      "variants": ["default", "destructive", "outline", "secondary", "ghost", "link"],
+      "sizes": ["default", "sm", "lg", "icon"],
+      "aria_role": "button",
+      "aria_required_attrs": [],
+      "keyboard_model": "Enter/Space to activate, Tab to focus",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Input",
+      "shadcn_version": "current",
+      "radix_primitive": "none (native input)",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "textbox",
+      "aria_required_attrs": ["id", "aria-label or aria-labelledby"],
+      "keyboard_model": "Standard text input; Tab to focus",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Card",
+      "shadcn_version": "current",
+      "radix_primitive": "none (div composition)",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "article (semantic) or none",
+      "aria_required_attrs": [],
+      "keyboard_model": "Not interactive by default; focusable if onClick added",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Dialog",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-dialog",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "dialog",
+      "aria_required_attrs": ["aria-labelledby (DialogTitle)", "aria-describedby (DialogDescription)"],
+      "keyboard_model": "Escape to close, focus trap inside, Tab cycles focusable elements",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Form",
+      "shadcn_version": "current",
+      "radix_primitive": "react-hook-form integration",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "form",
+      "aria_required_attrs": ["aria-describedby for errors via FormMessage"],
+      "keyboard_model": "Standard form navigation; Enter to submit",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Select",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-select",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "combobox",
+      "aria_required_attrs": ["aria-label or aria-labelledby"],
+      "keyboard_model": "Space/Enter to open, Arrow keys to navigate, Enter to select, Escape to close",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Toast",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-toast",
+      "variants": ["default", "destructive"],
+      "sizes": ["default"],
+      "aria_role": "status (default) or alert (destructive)",
+      "aria_required_attrs": [],
+      "keyboard_model": "Auto-dismiss; focusable on hover; Escape to dismiss",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Badge",
+      "shadcn_version": "current",
+      "radix_primitive": "none (span)",
+      "variants": ["default", "secondary", "destructive", "outline"],
+      "sizes": ["default"],
+      "aria_role": "none (decorative) or status",
+      "aria_required_attrs": ["aria-label if status-bearing"],
+      "keyboard_model": "Not interactive",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Avatar",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-avatar",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "img",
+      "aria_required_attrs": ["alt on AvatarImage"],
+      "keyboard_model": "Not interactive",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Table",
+      "shadcn_version": "current",
+      "radix_primitive": "none (native table)",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "table",
+      "aria_required_attrs": ["caption or aria-label", "th scope"],
+      "keyboard_model": "Not interactive by default",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Tabs",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-tabs",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "tablist/tab/tabpanel",
+      "aria_required_attrs": ["aria-controls on tab", "aria-labelledby on tabpanel"],
+      "keyboard_model": "Arrow keys to navigate tabs, Enter/Space to activate, Tab moves to tabpanel",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Checkbox",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-checkbox",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "checkbox",
+      "aria_required_attrs": ["aria-label or associated label"],
+      "keyboard_model": "Space to toggle, Tab to focus",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Switch",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-switch",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "switch",
+      "aria_required_attrs": ["aria-checked (managed by Radix)", "aria-label or associated label"],
+      "keyboard_model": "Space to toggle, Tab to focus",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Label",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-label",
+      "variants": ["default"],
+      "sizes": ["default"],
+      "aria_role": "none (native label)",
+      "aria_required_attrs": ["htmlFor matching input id"],
+      "keyboard_model": "Not interactive",
+      "availability": "AVAILABLE"
+    },
+    {
+      "name": "Separator",
+      "shadcn_version": "current",
+      "radix_primitive": "@radix-ui/react-separator",
+      "variants": ["horizontal", "vertical"],
+      "sizes": ["default"],
+      "aria_role": "separator",
+      "aria_required_attrs": ["aria-orientation"],
+      "keyboard_model": "Not interactive",
+      "availability": "AVAILABLE"
+    }
+  ]
+}
