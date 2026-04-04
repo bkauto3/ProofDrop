@@ -33,6 +33,18 @@ export default function HomePage() {
             ProofDrop verifies AIVS bundles and generates permanent, tamper-evident receipt URLs
             you can share with clients, attach to invoices, and use in compliance documents.
           </p>
+          <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto">
+            Need to generate a bundle first?{' '}
+            <a
+              href="https://github.com/swarmsync-ai/Conduit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-medium hover:underline"
+            >
+              Conduit
+            </a>
+            {' '}is our open-source headless browser that captures and signs AI work as an AIVS bundle — then drop it here.
+          </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">
               <Link href="/api/auth/signin">Get started free</Link>
