@@ -32,10 +32,15 @@ export async function POST() {
     }
 
     const stripe = getStripe()
-    const portalSession = await stripe.billingPortal.sessions.create({
-      customer: customerId,
-      return_url: `${baseUrl}/dashboard`,
-    })
+    // Idempotency key is bucketed to the current hour so that:
+    // (a) Retries within the same minute reuse the same session (no duplicates)
+    // (b) A user can get a fresh portal session after the previous one expires
+    //     (~5-10 min) without hitting a stale 24h-idempotency window.
+    const hourBucket = Math.floor(Date.now() / 1000 / 3600)
+    const portalSession = await stripe.billingPortal.sessions.create(
+      { customer: customerId, return_url: `${baseUrl}/dashboard` },
+      { idempotencyKey: `portal-session-${customerId}-${hourBucket}` },
+    )
 
     return NextResponse.json({ url: portalSession.url })
   } catch (err) {

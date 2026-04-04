@@ -17,6 +17,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Webhook secret not configured.' }, { status: 500 })
   }
 
+  // ── Signature verification ────────────────────────────────────────────────
+  // Must happen before any DB access. Uses req.text() (raw body string) which
+  // Next.js App Router preserves byte-for-byte — no body parser interference.
   let event: Stripe.Event
   try {
     const stripe = getStripe()
@@ -27,6 +30,22 @@ export async function POST(req: NextRequest) {
   }
 
   const sql = getDb()
+
+  // ── Idempotency guard ─────────────────────────────────────────────────────
+  // Stripe guarantees at-least-once delivery. Record the event ID before
+  // processing; if it already exists the INSERT fails and we ack without
+  // re-processing. This prevents duplicate subscription tier updates on
+  // replayed deliveries.
+  try {
+    await sql`
+      INSERT INTO processed_stripe_events (stripe_event_id, event_type)
+      VALUES (${event.id}, ${event.type})
+    `
+  } catch {
+    // INSERT failed due to PRIMARY KEY conflict — event already processed.
+    // Return 200 so Stripe stops retrying.
+    return NextResponse.json({ received: true })
+  }
 
   try {
     switch (event.type) {
