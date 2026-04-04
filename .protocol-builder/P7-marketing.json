@@ -1,0 +1,29 @@
+{
+  "phase": "P7",
+  "site": "proofdrop",
+  "business_name": "ProofDrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T23:00:00.000Z",
+  "validated_at": "2026-03-31T23:00:00.000Z",
+  "deliverables": {
+    "7A_blog_posts": [
+      "sites/BUILT/proofdrop/content/blog/01-pain-point-why-clients-ignore-your-proof-json.md",
+      "sites/BUILT/proofdrop/content/blog/02-how-proofdrop-turns-bundles-into-receipts.md",
+      "sites/BUILT/proofdrop/content/blog/03-proofdrop-vs-manual-compliance-trail.md"
+    ],
+    "7B_email": {
+      "welcome_sequence": [
+        "sites/BUILT/proofdrop/content/email/01-welcome-day-0.md",
+        "sites/BUILT/proofdrop/content/email/02-value-day-3.md",
+        "sites/BUILT/proofdrop/content/email/03-upgrade-day-7.md"
+      ],
+      "launch_announcement_to_list": "sites/BUILT/proofdrop/content/email/04-launch-announcement-list.md"
+    },
+    "7C_social": "sites/BUILT/proofdrop/content/social/launch-posts-7c.md",
+    "manifest": "sites/BUILT/proofdrop/content/PHASE7-README.md"
+  },
+  "human_approval_7C": "APPROVED",
+  "human_approval_7C_at": "2026-03-31T23:59:00.000Z",
+  "validator": "sites/BUILT/proofdrop/.protocol-builder/validation-P7-marketing.json",
+  "notes": "Phase 7 complete. 7C copy approved — publish via LinkedIn/X (see content/social/7c-approval-and-publish-log.md). Repo cannot auto-post; operator executes in native apps or Postiz etc."
+}

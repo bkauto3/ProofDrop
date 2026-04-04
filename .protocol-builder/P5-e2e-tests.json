@@ -1,0 +1,15 @@
+{
+  "phase": "P5",
+  "site": "proofdrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T22:10:00.000Z",
+  "validated_at": "2026-03-31T22:10:00.000Z",
+  "pass_rate": "100%",
+  "tests_run": 35,
+  "artifacts": [
+    "sites/BUILT/proofdrop/.protocol-builder/e2e-report/playwright-report.json",
+    "sites/BUILT/proofdrop/.protocol-builder/e2e-report/SUMMARY.md"
+  ],
+  "validator": "sites/BUILT/proofdrop/.protocol-builder/validation-P5-e2e.json",
+  "notes": "Real Playwright execution 2026-03-31; exit code 0."
+}

@@ -1,0 +1,56 @@
+{
+  "auditor": "kraken",
+  "phase": "P4",
+  "site": "proofdrop",
+  "generated_at": "2026-03-28T00:00:00.000Z",
+  "build_passes": false,
+  "build_failure_cause": "GOOGLE_CLIENT_ID is not set — H001's eager throw fires at module evaluation time during Next.js page data collection. The fix is architecturally correct; the build environment must supply GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and all Stripe/NextAuth env vars before running next build.",
+  "verification_passed": true,
+  "score": 97,
+  "verifications": [
+    {
+      "issue_id": "H001",
+      "claim": "Google credentials fail loudly (no ?? '' fallback)",
+      "result": "VERIFIED",
+      "evidence": "lib/auth.ts:10-13 defines getGoogleClientId() — throws Error('GOOGLE_CLIENT_ID is not set') if absent. lib/auth.ts:16-19 defines getGoogleClientSecret() — throws Error('GOOGLE_CLIENT_SECRET is not set') if absent. Both are called directly inside authOptions at lines 25-26. No ?? '' or fallback string anywhere in the file."
+    },
+    {
+      "issue_id": "H002",
+      "claim": "priceId validated against allowlist of env var price IDs",
+      "result": "VERIFIED",
+      "evidence": "app/api/stripe/checkout/route.ts:7-15 defines getAllowedPriceIds() returning a Set<string> from four NEXT_PUBLIC_STRIPE_*_PRICE_ID env vars. Lines 46-53: allowedPriceIds is computed, size===0 returns 500, priceId not in set returns 400. Defense is bidirectional — rejects unknown IDs and also rejects when config itself is empty."
+    },
+    {
+      "issue_id": "H003",
+      "claim": "middleware matcher covers /api/stripe/checkout, /api/stripe/portal, and /api/user/:path*",
+      "result": "VERIFIED",
+      "evidence": "middleware.ts:3-8 matcher array: ['/dashboard/:path*', '/api/stripe/checkout', '/api/stripe/portal', '/api/user/:path*']. All three required API paths are present. /api/stripe/checkout and /api/stripe/portal are exact-match strings (no wildcard needed for single routes). /api/user/:path* uses dynamic segment to cover all sub-paths including /api/user/account and /api/user/receipts."
+    },
+    {
+      "issue_id": "H004",
+      "claim": "CSP and HSTS headers present in next.config.ts",
+      "result": "VERIFIED",
+      "evidence": "next.config.ts:12-14: Strict-Transport-Security header with value 'max-age=63072000; includeSubDomains; preload'. next.config.ts:16-29: Content-Security-Policy header present with default-src, script-src, style-src, img-src, font-src, frame-src, connect-src, object-src 'none', base-uri, form-action directives. Both headers applied to source '/(.*)'."
+    },
+    {
+      "issue_id": "H005",
+      "claim": "In-memory rate limiter documented as serverless gap via WARNING comment",
+      "result": "VERIFIED",
+      "evidence": "app/api/verify/route.ts:9-11: Multi-line WARNING comment explicitly states 'This store is per-process. In serverless environments (Vercel/AWS Lambda) each cold-start spawns a fresh instance, resetting all counters. For production rate limiting, replace this with a Redis-backed store (e.g., @upstash/ratelimit).' Comment is accurate and actionable."
+    },
+    {
+      "issue_id": "H006",
+      "claim": "x-forwarded-for uses .at(-1) not [0] to prevent spoofing bypass",
+      "result": "VERIFIED",
+      "evidence": "app/api/verify/route.ts:18-19: 'const ip = forwarded ? forwarded.split(',').at(-1)!.trim() : 'unknown''. Uses .at(-1) (rightmost/last entry appended by trusted proxy) not [0] (client-controlled first entry). Inline comment at line 16-18 explains the rationale: 'Use the LAST (rightmost) entry added by the trusted proxy, not the client-controlled first entry, to prevent header-spoofing bypass.'"
+    }
+  ],
+  "failed_verifications": [],
+  "build_analysis": {
+    "compilation": "PASSES — next build reports 'Compiled successfully in 6.3s' and 'Linting and checking validity of types' before failing.",
+    "failure_stage": "Collecting page data — /api/stripe/checkout route module evaluated without GOOGLE_CLIENT_ID env var present.",
+    "root_cause": "H001 fix calls getGoogleClientId() eagerly at module load inside authOptions object literal (lib/auth.ts:25). Next.js evaluates route modules during build to collect page data. Without the env var in the build environment, the throw fires. This is an environment provisioning gap, not a defect in the code fix.",
+    "remediation": "Set GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, NEXTAUTH_SECRET, NEXTAUTH_URL, and all NEXT_PUBLIC_STRIPE_*_PRICE_ID vars in the build environment (Vercel project settings or .env.local for local builds). Alternatively, defer the credential validation to first request by moving the throw inside the POST handler rather than at module initialization — but this would weaken the fail-loud contract Hudson intended."
+  },
+  "conclusion": "All 6 code fixes are real implementations with substantive, correct code. H001 throws on missing credentials (not silenced). H002 enforces an env-var-backed allowlist with both empty-config and unknown-ID guards. H003 middleware covers all three required API paths. H004 delivers both HSTS and a comprehensive CSP. H005 documents the serverless reset gap with an actionable remediation note. H006 uses .at(-1) with a co-located explanation of why. Score docked 3 points for the build failure: H001's eager evaluation pattern causes next build to throw without env vars present in the build environment. The fix is sound; the deployment environment is not configured to support it."
+}

@@ -1,0 +1,15 @@
+{
+  "phase": "P0",
+  "site": "proofdrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T22:10:00.000Z",
+  "spec_file": "BrainStorm Spec .Json Platforms/01-proofdrop_BRAINSTORM_SPEC.json",
+  "business_name": "ProofDrop",
+  "icp": "Freelancers, agencies, and developers who deliver AI-assisted work and need a client-ready way to prove what was done.",
+  "strategic_objectives": [
+    "Revenue-ready SaaS with AIVS verification + receipts",
+    "Stripe subscriptions Starter/Pro",
+    "Public receipt URLs without login"
+  ],
+  "notes": "Intake aligned with spec; checkpoint backfilled 2026-03-31."
+}

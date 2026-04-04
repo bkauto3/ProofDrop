@@ -1,0 +1,25 @@
+{
+  "site": "proofdrop",
+  "updated": "2026-03-31T22:15:00.000Z",
+  "canonical_domain": "https://proofdrop.pro",
+  "risks": [
+    {
+      "id": "R1",
+      "risk": "Stripe checkout POST on production returned unexpected status in an earlier smoke test — re-verify after pointing Vercel + env to proofdrop.pro",
+      "mitigation": "Confirm Next.js route is deployed; expect 401/403 for unauthenticated POST",
+      "severity": "medium"
+    },
+    {
+      "id": "R2",
+      "risk": "DNS must resolve proofdrop.pro to the correct Vercel project",
+      "mitigation": "Single canonical URL; align NEXTAUTH_URL, OAuth redirect URIs, Stripe webhooks",
+      "severity": "medium"
+    },
+    {
+      "id": "R3",
+      "risk": "Neon not available in local E2E — DB errors logged but tests pass by design",
+      "mitigation": "Run smoke against staging with real DATABASE_URL periodically",
+      "severity": "low"
+    }
+  ]
+}

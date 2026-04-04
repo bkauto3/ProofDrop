@@ -1,0 +1,74 @@
+# .well-known/ai.txt - AI Agent Capabilities Manifest
+# Reference: https://github.com/svenschultze/VOIX
+# Deploy to: https://proofdrop.pro/.well-known/ai.txt
+
+Website: https://proofdrop.pro
+Business: ProofDrop
+Tagline: Turn any AIVS proof bundle into a shareable receipt in seconds
+Target Audience: Freelancers, agencies, and developers who deliver AI-assisted work and need a fast, client-ready way to prove what was done — without asking clients to read raw JSON.
+Generated: 2026-04-01T12:28:59.341814+00:00
+
+## Overview
+ProofDrop is a SaaS platform built on the Protocol Websites monorepo.
+Authenticated users access all features via the web dashboard or REST API.
+Public features (where applicable) require no account.
+
+## Core Capabilities
+- AIVS proof bundle verification: Accept JSON paste or file upload; validate AIVS schema with Zod; run deterministic PASS/FAIL verific
+- Permanent tamper-evident receipt: Derive receipt ID deterministically from bundle hash (rcpt_ + first 32 hex chars of SHA-256). Same b
+- Public read-only receipt page (/receipt/[id]): No auth required. Shows PASS/FAIL badge, bundle ID, content hash, audit timeline (captured/verified/
+- Google OAuth sign-in: Optional sign-in with Google via NextAuth.js. Signed-in users get receipt history saved, higher rate
+- Dashboard — receipt history: Authenticated users see paginated table of all their receipts: ID, status badge, date, view/export a
+- Stripe subscription billing: Pricing page with Starter (9/mo) and Pro (49/mo) tiers. Checkout via Stripe. Webhook handler verifie
+
+## Problem Solved
+- Clients cannot read raw AIVS proof JSON — it is low-level, dense, and meaningless to non-technical stakeholders
+- There is no standard artifact to attach to an invoice that proves AI-assisted work was done and verified
+- Compliance and audit teams have no reliable way to archive or re-verify AI work receipts months later
+
+## Value Propositions
+- Paste any AIVS bundle and get a PASS/FAIL result with a permanent receipt URL in under 5 seconds
+- Receipt URLs are stable forever — same bundle always produces the same URL (idempotent by hash)
+- No account required to view or verify a receipt — clients click the link and see the result immediately
+
+## Pricing
+- Free: $0/month
+- Starter: $49/month
+- Pro: $149/month
+- Enterprise: Custom pricing
+
+## VOIX Framework Support
+This site supports the VOIX framework for AI agent interaction.
+
+### Tool Discovery
+- Tools declared via <tool> HTML elements on relevant pages
+- Props declared via <prop> child elements
+- Tools fire browser events on invocation - captured by VOIX extension
+- Context elements expose PUBLIC application state only
+
+### Supported AI Providers
+- Claude (primary)
+- ChatGPT (primary)
+- Gemini, Perplexity, and others (secondary)
+
+### Chrome Extension
+Install VOIX to interact with ProofDrop via your AI assistant:
+https://chromewebstore.google.com/detail/voix/agmhpolimgfdfnlgciajhbkdapkophie
+
+### Documentation
+https://github.com/svenschultze/VOIX
+
+## Structured Data
+- Schema.org JSON-LD: /schema_org.json (embedded in layout.tsx)
+- OpenGraph tags: defined per-page
+- sitemap.xml: https://proofdrop.pro/sitemap.xml
+
+## Crawling
+- robots.txt: https://proofdrop.pro/robots.txt
+- All public pages are indexable
+- API routes (/api/) are excluded from indexing
+
+## Security
+- Public tools expose no credentials, API keys, or PII
+- User data accessible only to authenticated session owner
+- All context elements filtered to public-safe fields

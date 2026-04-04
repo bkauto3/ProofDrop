@@ -209,7 +209,7 @@ export async function POST(req: NextRequest) {
     `) as { id: string; status: string }[]
 
     if (existing[0]) {
-      const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.com'
+      const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.pro'
       return NextResponse.json({
         receiptId: existing[0].id,
         status: existing[0].status,
@@ -244,7 +244,7 @@ export async function POST(req: NextRequest) {
     } catch (dbErr) {
       console.error('[verify] DB store error:', dbErr)
     }
-    const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.com'
+    const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.pro'
     return NextResponse.json({
       receiptId,
       status: 'ERROR',
@@ -287,7 +287,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.com'
+  const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.pro'
   return NextResponse.json({
     receiptId,
     status,

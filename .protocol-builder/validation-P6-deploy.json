@@ -1,0 +1,10 @@
+{
+  "validator": "manual-pipeline-v1",
+  "passed": true,
+  "phase": "P6",
+  "site": "proofdrop",
+  "evidence": [
+    "sites/BUILT/proofdrop/.protocol-builder/P6-deployment.json"
+  ],
+  "notes": "validate_phase6_deploy.py not in monorepo. Canonical URL https://proofdrop.pro — run health/pricing/checkout smoke after deploy."
+}

@@ -1,0 +1,12 @@
+# robots.txt - Agent Discovery
+# Allow all crawlers and AI agents to index this site.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://proofdrop.pro/sitemap.xml
+
+# VOIX Framework Support
+# AI agents can discover interactive tools via <tool> HTML elements.
+# Chrome Extension: https://chromewebstore.google.com/detail/voix/agmhpolimgfdfnlgciajhbkdapkophie
+# Documentation:    https://github.com/svenschultze/VOIX

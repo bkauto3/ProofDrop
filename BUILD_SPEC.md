@@ -4,10 +4,10 @@
 
 **ProofDrop** is a professional SaaS web application where users paste or upload an AIVS proof bundle and instantly receive a permanent, tamper-evident receipt URL they can share with clients, attach to invoices, and use in compliance documents.
 
-**Domain**: proofdrop.com
+**Domain**: proofdrop.pro
 **Stack**: Next.js 15 + React 19, Neon (PostgreSQL), NextAuth.js v4 (Google OAuth), Stripe, Tailwind CSS, shadcn/ui
 **Monorepo root**: `C:\Users\Administrator\Desktop\Protocol Websites\monorepo`
-**Site location**: `sites/proofdrop` inside the monorepo
+**Site location**: `sites/BUILT/proofdrop` inside the monorepo
 **Shared packages** (already built, use them):
 - `@protocol-factory/shared-ui` — all UI components (Button, Card, Badge, Input, Textarea, Alert, Toast, Tabs, Dialog, HeroSection, PricingCard, FeatureGrid, SiteHeader, SiteFooter, ProofBadge)
 - `@protocol-factory/protocol-verifier` — AIVS verification logic (`verifyAIVSBundle`, `AIVSBundle`, `AIVSBundleSchema`, `hashSHA256`)
@@ -181,7 +181,7 @@ CREATE INDEX IF NOT EXISTS idx_subscriptions_stripe_sub_id ON subscriptions(stri
 7. User copies receipt URL, shares with client
 
 ### Receipt View Flow
-1. Client receives receipt URL like `https://proofdrop.com/receipt/rcpt_abc123...`
+1. Client receives receipt URL like `https://proofdrop.pro/receipt/rcpt_abc123...`
 2. Visits URL — no login required
 3. Sees: PASS/FAIL badge, bundle ID, content hash, timestamps (captured, verified, receipt created), verifier version
 4. Can expand "Raw Bundle Data" section (read-only, never executed)
@@ -216,7 +216,7 @@ CREATE INDEX IF NOT EXISTS idx_subscriptions_stripe_sub_id ON subscriptions(stri
 DATABASE_URL=postgresql://...
 
 # Auth (NextAuth.js)
-NEXTAUTH_URL=https://proofdrop.com
+NEXTAUTH_URL=https://proofdrop.pro
 NEXTAUTH_SECRET=<32-char random>
 GOOGLE_CLIENT_ID=...
 GOOGLE_CLIENT_SECRET=...

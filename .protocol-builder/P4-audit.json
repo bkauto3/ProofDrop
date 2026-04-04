@@ -1,0 +1,44 @@
+{
+  "phase": "P4",
+  "site": "proofdrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T22:00:00.000Z",
+  "audit_type": "static_code_review",
+  "score_percent": 92,
+  "findings": [
+    {
+      "id": "SEC-001",
+      "severity": "info",
+      "area": "Stripe",
+      "detail": "`app/api/stripe/webhook/route.ts` uses `stripe.webhooks.constructEvent` on raw body with signature verification.",
+      "status": "verified"
+    },
+    {
+      "id": "SEC-002",
+      "severity": "info",
+      "area": "Auth",
+      "detail": "Protected APIs use `requireSession` / session checks; checkout returns 401 without session (confirmed in E2E).",
+      "status": "verified"
+    },
+    {
+      "id": "UX-001",
+      "severity": "low",
+      "area": "React",
+      "detail": "`useSearchParams` in sign-in form wrapped in `<Suspense>` in `app/auth/signin/page.tsx`.",
+      "status": "verified"
+    },
+    {
+      "id": "SEC-003",
+      "severity": "info",
+      "area": "Headers",
+      "detail": "E2E asserts X-Frame-Options DENY, X-Content-Type-Options nosniff, CSP with object-src none on homepage.",
+      "status": "verified"
+    }
+  ],
+  "recommendations": [
+    "Run OWASP ZAP or dependency audit on a schedule (npm audit shows low/moderate upstream).",
+    "Re-verify Stripe webhook idempotency under load before high-traffic launch."
+  ],
+  "validator": "sites/BUILT/proofdrop/.protocol-builder/validation-P4-audit.json",
+  "notes": "Not a substitute for full dynamic penetration test; complements Phase 5 E2E."
+}

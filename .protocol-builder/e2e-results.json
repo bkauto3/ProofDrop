@@ -1,0 +1,1386 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\Administrator\\Desktop\\Protocol Websites\\monorepo\\sites\\proofdrop\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/Protocol Websites/monorepo/sites/proofdrop/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/Protocol Websites/monorepo/sites/proofdrop/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/Administrator/Desktop/Protocol Websites/monorepo/sites/proofdrop/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".protocol-builder/e2e-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --port 3001",
+      "url": "http://localhost:3001",
+      "reuseExistingServer": true,
+      "timeout": 120000,
+      "env": {
+        "DATABASE_URL": "postgresql://placeholder:placeholder@placeholder/placeholder",
+        "NEXTAUTH_URL": "http://localhost:3001",
+        "NEXTAUTH_SECRET": "test-secret-for-e2e-testing-only-32ch",
+        "GOOGLE_CLIENT_ID": "test-google-client-id",
+        "GOOGLE_CLIENT_SECRET": "test-google-client-secret",
+        "STRIPE_SECRET_KEY": "sk_test_placeholder",
+        "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_test_placeholder",
+        "STRIPE_WEBHOOK_SECRET": "whsec_placeholder",
+        "NEXT_PUBLIC_STRIPE_STARTER_MONTHLY_PRICE_ID": "price_starter_monthly",
+        "NEXT_PUBLIC_STRIPE_STARTER_ANNUAL_PRICE_ID": "price_starter_annual",
+        "NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PRICE_ID": "price_pro_monthly",
+        "NEXT_PUBLIC_STRIPE_PRO_ANNUAL_PRICE_ID": "price_pro_annual"
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "proofdrop.spec.ts",
+      "file": "proofdrop.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Homepage",
+          "file": "proofdrop.spec.ts",
+          "line": 24,
+          "column": 6,
+          "specs": [
+            {
+              "title": "loads with correct title",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1025,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:35.733Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-260a98251c2072e7e773",
+              "file": "proofdrop.spec.ts",
+              "line": 25,
+              "column": 7
+            },
+            {
+              "title": "hero headline is visible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 905,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:37.017Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-cc116d0adb61978d619d",
+              "file": "proofdrop.spec.ts",
+              "line": 30,
+              "column": 7
+            },
+            {
+              "title": "verifier section is present",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 846,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:37.946Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-ce37d7faad5733991722",
+              "file": "proofdrop.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "navigation links are present",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 921,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:38.813Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-d9d5f86e5eb72a4e9f77",
+              "file": "proofdrop.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "footer is present with ProofDrop branding",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 911,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:39.771Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-673b3ac2edb98c1ea3c5",
+              "file": "proofdrop.spec.ts",
+              "line": 50,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "About Page",
+          "file": "proofdrop.spec.ts",
+          "line": 58,
+          "column": 6,
+          "specs": [
+            {
+              "title": "loads successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2596,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:40.701Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-01ecf150b7b3cd7baed8",
+              "file": "proofdrop.spec.ts",
+              "line": 59,
+              "column": 7
+            },
+            {
+              "title": "has meaningful heading content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 799,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:43.318Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-5a751f9ba50d1f7f6f2a",
+              "file": "proofdrop.spec.ts",
+              "line": 64,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Pricing Page",
+          "file": "proofdrop.spec.ts",
+          "line": 71,
+          "column": 6,
+          "specs": [
+            {
+              "title": "loads successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1953,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:44.141Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-a5bd1900f86745ebb59b",
+              "file": "proofdrop.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "shows Free tier",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 885,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:46.116Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-8b27e62cdd60207eb92c",
+              "file": "proofdrop.spec.ts",
+              "line": 77,
+              "column": 7
+            },
+            {
+              "title": "shows Starter tier pricing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 849,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:47.027Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-2e40e27fa49849b753f1",
+              "file": "proofdrop.spec.ts",
+              "line": 83,
+              "column": 7
+            },
+            {
+              "title": "shows Pro tier pricing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 809,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:47.939Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-5a8a88a308de27b96293",
+              "file": "proofdrop.spec.ts",
+              "line": 89,
+              "column": 7
+            },
+            {
+              "title": "billing toggle is present",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 826,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:48.772Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-cbb208ed1331620b182f",
+              "file": "proofdrop.spec.ts",
+              "line": 95,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "API Health Check",
+          "file": "proofdrop.spec.ts",
+          "line": 107,
+          "column": 6,
+          "specs": [
+            {
+              "title": "GET /api/health returns 200 with status ok",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1025,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:49.626Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-47defe54aa6f03286d45",
+              "file": "proofdrop.spec.ts",
+              "line": 108,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "API /api/receipts/[id] validation",
+          "file": "proofdrop.spec.ts",
+          "line": 117,
+          "column": 6,
+          "specs": [
+            {
+              "title": "returns 400 for invalid receipt ID format",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1935,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:50.670Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-c73ea1c7bd36979c1ce4",
+              "file": "proofdrop.spec.ts",
+              "line": 118,
+              "column": 7
+            },
+            {
+              "title": "returns 400 for empty receipt ID",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1033,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:52.624Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-5b55ed434770901161e1",
+              "file": "proofdrop.spec.ts",
+              "line": 123,
+              "column": 7
+            },
+            {
+              "title": "returns 404 for valid-format but nonexistent receipt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3190,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:53.679Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-3c1bba37030baf6ea0b0",
+              "file": "proofdrop.spec.ts",
+              "line": 129,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "API /api/verify validation",
+          "file": "proofdrop.spec.ts",
+          "line": 138,
+          "column": 6,
+          "specs": [
+            {
+              "title": "returns 400 for empty body",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3413,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:05:56.893Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-70d07139730e200a0088",
+              "file": "proofdrop.spec.ts",
+              "line": 139,
+              "column": 7
+            },
+            {
+              "title": "returns 400 for non-JSON body",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 62,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:00.326Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-e6a17127aa6cf5f1ebb4",
+              "file": "proofdrop.spec.ts",
+              "line": 147,
+              "column": 7
+            },
+            {
+              "title": "returns 400 for invalid JSON string",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 73,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:00.408Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-877d57555263acd9f728",
+              "file": "proofdrop.spec.ts",
+              "line": 155,
+              "column": 7
+            },
+            {
+              "title": "returns non-2xx without database for valid bundle",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3060,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:00.505Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-1de03dbc8142ded9ee80",
+              "file": "proofdrop.spec.ts",
+              "line": 163,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Protected API routes require auth",
+          "file": "proofdrop.spec.ts",
+          "line": 181,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/api/stripe/checkout returns 401/403 without session",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2207,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:03.587Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-4e8adfbfc2705ac1ac0b",
+              "file": "proofdrop.spec.ts",
+              "line": 182,
+              "column": 7
+            },
+            {
+              "title": "/api/stripe/portal returns 401/403 without session",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 920,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:05.821Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-cac35fa7d1cc01cd8629",
+              "file": "proofdrop.spec.ts",
+              "line": 190,
+              "column": 7
+            },
+            {
+              "title": "/api/user/receipts returns 401/403 without session",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 901,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:06.770Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-ec35fbea71d3f9d350f3",
+              "file": "proofdrop.spec.ts",
+              "line": 195,
+              "column": 7
+            },
+            {
+              "title": "/api/user/account returns 401/403 without session",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 813,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:07.690Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-206fa7820cfd7d1e30af",
+              "file": "proofdrop.spec.ts",
+              "line": 200,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Receipt page /receipt/[id]",
+          "file": "proofdrop.spec.ts",
+          "line": 210,
+          "column": 6,
+          "specs": [
+            {
+              "title": "returns 400/404 for invalid receipt ID format",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4252,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:08.523Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-0c7d2059172da93169d0",
+              "file": "proofdrop.spec.ts",
+              "line": 211,
+              "column": 7
+            },
+            {
+              "title": "returns 404 for valid-format nonexistent receipt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3470,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:12.798Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-1256b91a57ad4962cda1",
+              "file": "proofdrop.spec.ts",
+              "line": 223,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Dashboard auth protection",
+          "file": "proofdrop.spec.ts",
+          "line": 235,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/dashboard redirects unauthenticated users",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5066,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:16.289Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-6abc210e58f85bfea8dc",
+              "file": "proofdrop.spec.ts",
+              "line": 236,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Error pages",
+          "file": "proofdrop.spec.ts",
+          "line": 252,
+          "column": 6,
+          "specs": [
+            {
+              "title": "404 page renders for unknown routes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 883,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:21.379Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-e66b71f4d50e9e2f3916",
+              "file": "proofdrop.spec.ts",
+              "line": 253,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Security headers",
+          "file": "proofdrop.spec.ts",
+          "line": 266,
+          "column": 6,
+          "specs": [
+            {
+              "title": "homepage response has X-Frame-Options",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 315,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:22.283Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-1cb98a29c8628657c1b6",
+              "file": "proofdrop.spec.ts",
+              "line": 267,
+              "column": 7
+            },
+            {
+              "title": "homepage response has X-Content-Type-Options",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 241,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:22.624Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-33382b27a84137b3f042",
+              "file": "proofdrop.spec.ts",
+              "line": 274,
+              "column": 7
+            },
+            {
+              "title": "homepage response has Content-Security-Policy",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 268,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:22.881Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-32fcc6e68c8e85789105",
+              "file": "proofdrop.spec.ts",
+              "line": 280,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Accessibility",
+          "file": "proofdrop.spec.ts",
+          "line": 292,
+          "column": 6,
+          "specs": [
+            {
+              "title": "homepage has a single h1",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 740,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:23.166Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-07969e00e10f5b52a48c",
+              "file": "proofdrop.spec.ts",
+              "line": 293,
+              "column": 7
+            },
+            {
+              "title": "homepage main landmark exists",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 750,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:23.925Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-37af2bb67d0bc328e646",
+              "file": "proofdrop.spec.ts",
+              "line": 299,
+              "column": 7
+            },
+            {
+              "title": "verify button is keyboard-focusable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 822,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:24.696Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-e1045b60af88c79a459c",
+              "file": "proofdrop.spec.ts",
+              "line": 305,
+              "column": 7
+            },
+            {
+              "title": "pricing page has main landmark",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 834,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-28T21:06:25.544Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f3bd3d2f4bae309f98d1-8df8d350b68aaa185186",
+              "file": "proofdrop.spec.ts",
+              "line": 312,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-28T21:05:22.488Z",
+    "duration": 64414.281,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

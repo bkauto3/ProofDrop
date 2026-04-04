@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
   }
 
   const email = session.user!.email!
-  const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.com'
+  const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.pro'
 
   try {
     const stripe = getStripe()

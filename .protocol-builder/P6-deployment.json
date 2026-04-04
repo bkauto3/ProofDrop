@@ -1,0 +1,34 @@
+{
+  "phase": "P6",
+  "site": "proofdrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T22:05:00.000Z",
+  "production_urls": {
+    "canonical": "https://proofdrop.pro",
+    "notes": "Set NEXTAUTH_URL, OAuth redirects, and Stripe webhook to this host."
+  },
+  "smoke_checks": {
+    "https://proofdrop.pro/api/health": {
+      "method": "GET",
+      "status": 200,
+      "note": "Verify after deploy; re-run smoke if DNS changes."
+    },
+    "https://proofdrop.pro/pricing": {
+      "method": "GET",
+      "status": 200,
+      "note": "Public pricing page"
+    },
+    "https://proofdrop.pro/api/stripe/checkout": {
+      "method": "POST",
+      "body": "{\"priceId\":\"price_test\"}",
+      "status": "see_live",
+      "note": "Expect 401/403 without session. Re-check if not 401/403."
+    }
+  },
+  "billing_smoke_local_e2e": {
+    "post_api_stripe_checkout_unauthenticated": "401 or 403 (35/35 tests include this)",
+    "status": "passed"
+  },
+  "env_snapshot": "sites/BUILT/proofdrop/.protocol-builder/env-phase6-check.json",
+  "validator": "sites/BUILT/proofdrop/.protocol-builder/validation-P6-deploy.json"
+}

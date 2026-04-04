@@ -28,7 +28,7 @@ const TIERS: PricingTier[] = [
     annualPrice: '$0',
     description: 'For individuals exploring ProofDrop.',
     features: [
-      '10 verifications / month',
+      '25 verifications / month',
       'Public receipts',
       '30-day receipt history',
       'Verifier widget',
@@ -38,8 +38,8 @@ const TIERS: PricingTier[] = [
   },
   {
     name: 'Starter',
-    monthlyPrice: '$49',
-    annualPrice: '$490',
+    monthlyPrice: '$12',
+    annualPrice: '$119',
     description: 'For freelancers and small teams.',
     features: [
       '100 verifications / month',
@@ -55,8 +55,8 @@ const TIERS: PricingTier[] = [
   },
   {
     name: 'Pro',
-    monthlyPrice: '$149',
-    annualPrice: '$1,490',
+    monthlyPrice: '$29',
+    annualPrice: '$289',
     description: 'For agencies and production workflows.',
     features: [
       'Unlimited verifications',
@@ -96,7 +96,7 @@ export default function PricingPage() {
 
   const handleStartPlan = async (tier: PricingTier) => {
     if (tier.isCustom) {
-      window.location.href = 'mailto:hello@proofdrop.com?subject=Enterprise%20Inquiry'
+      window.location.href = 'mailto:hello@proofdrop.pro?subject=Enterprise%20Inquiry'
       return
     }
     if (!tier.monthlyPriceId && !tier.annualPriceId) {

@@ -1,0 +1,25 @@
+{
+  "validator": "manual-phase7-v1",
+  "passed": true,
+  "phase": "P7",
+  "site": "proofdrop",
+  "canonical_domain": "https://proofdrop.pro",
+  "checks": {
+    "7A_blog_posts_count": { "required": 3, "paths": [
+      "sites/BUILT/proofdrop/content/blog/01-pain-point-why-clients-ignore-your-proof-json.md",
+      "sites/BUILT/proofdrop/content/blog/02-how-proofdrop-turns-bundles-into-receipts.md",
+      "sites/BUILT/proofdrop/content/blog/03-proofdrop-vs-manual-compliance-trail.md"
+    ],
+    "notes": "Pain / how-it-works / comparison; frontmatter + keywords; CTA to proofdrop.pro"
+    },
+    "7B_email_welcome_sequence": { "required": 3, "paths": [
+      "sites/BUILT/proofdrop/content/email/01-welcome-day-0.md",
+      "sites/BUILT/proofdrop/content/email/02-value-day-3.md",
+      "sites/BUILT/proofdrop/content/email/03-upgrade-day-7.md"
+    ]},
+    "7B_launch_announcement_list": { "path": "sites/BUILT/proofdrop/content/email/04-launch-announcement-list.md" },
+    "7C_social_five_posts": { "path": "sites/BUILT/proofdrop/content/social/launch-posts-7c.md", "platforms": ["LinkedIn", "X"], "human_approval_7C": "APPROVED", "human_approval_at": "2026-03-31T23:59:00.000Z" }
+  },
+  "manifest": "sites/BUILT/proofdrop/content/PHASE7-README.md",
+  "validated_at": "2026-03-31T23:00:00.000Z"
+}

@@ -3,7 +3,7 @@ import { SiteFooter } from '@/components/footer/site-footer'
 import { VerifierWidget } from '@/components/verifier/verifier-widget'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { Shield, Clock, Link2, FileCheck, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Shield, Clock, Link2, FileCheck, ArrowRight, CheckCircle2, Download } from 'lucide-react'
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
 
@@ -33,8 +33,19 @@ export default function HomePage() {
             ProofDrop verifies AIVS bundles and generates permanent, tamper-evident receipt URLs
             you can share with clients, attach to invoices, and use in compliance documents.
           </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <Button asChild size="lg">
+              <Link href="/api/auth/signin">Get started free</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href="https://github.com/swarmsync-ai/Conduit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Download size={16} aria-hidden="true" />
+                Download Conduit
+              </a>
+            </Button>
+          </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Try it free — no account needed
+            Conduit generates AIVS bundles. ProofDrop verifies them.
           </p>
         </section>
 
@@ -109,6 +120,16 @@ export default function HomePage() {
                 <div className="pt-1.5 pb-10 last:pb-0">
                   <h3 className="text-base font-semibold text-foreground">{step.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                  {'link' in step && step.link && (
+                    <a
+                      href={step.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                    >
+                      {step.link.label}
+                    </a>
+                  )}
                 </div>
               </li>
             ))}
@@ -171,7 +192,10 @@ export default function HomePage() {
               <Link href="/api/auth/signin">Get started free</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/about">Learn more</Link>
+              <a href="https://github.com/swarmsync-ai/Conduit" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Download size={16} aria-hidden="true" />
+                Download Conduit
+              </a>
             </Button>
           </div>
         </section>
@@ -210,9 +234,15 @@ const features = [
 
 const steps = [
   {
-    title: 'Paste or upload your bundle',
+    title: 'Generate a bundle with Conduit',
     description:
-      'Drop in your AIVS proof bundle JSON directly in the widget above — no account needed.',
+      'Download Conduit — our open-source headless browser — to capture and sign AI-assisted work as an AIVS proof bundle.',
+    link: { href: 'https://github.com/swarmsync-ai/Conduit', label: 'Get Conduit on GitHub →' },
+  },
+  {
+    title: 'Drop your bundle into ProofDrop',
+    description:
+      'Paste the AIVS proof bundle JSON directly in the verifier widget above — no account needed.',
   },
   {
     title: 'ProofDrop verifies it',
@@ -231,17 +261,17 @@ const pricingPreview = [
     name: 'Free',
     price: '$0/mo',
     highlighted: false,
-    features: ['10 verifications/mo', 'Public receipts', '30-day history'],
+    features: ['25 verifications/mo', 'Public receipts', '30-day history'],
   },
   {
     name: 'Starter',
-    price: '$49/mo',
+    price: '$12/mo',
     highlighted: true,
     features: ['100 verifications/mo', 'Permanent history', 'JSON export'],
   },
   {
     name: 'Pro',
-    price: '$149/mo',
+    price: '$29/mo',
     highlighted: false,
     features: ['Unlimited verifications', 'API access', 'Bulk export'],
   },

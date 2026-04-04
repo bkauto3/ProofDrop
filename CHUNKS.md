@@ -1,4 +1,4 @@
-# Proofdrop — Ralph Wiggum Implementation Chunks
+# ProofDrop — Ralph Wiggum Implementation Chunks
 
 **Site:** `sites/proofdrop`
 **Tech stack:** Next.js 15, Neon, NextAuth.js, Stripe, Vercel, Tailwind, shadcn/ui
@@ -155,7 +155,7 @@ import { verifyProofBundle } from '@protocol-factory/protocol-verifier';
 ### Environment Variables Required:
 ```
 NEXTAUTH_SECRET=          # Generate: openssl rand -base64 32
-NEXTAUTH_URL=             # https://proofdrop.vercel.app (prod) | http://localhost:3000 (dev)
+NEXTAUTH_URL=             # https://proofdrop.pro (prod) | http://localhost:3000 (dev)
 GOOGLE_CLIENT_ID=         # From Google Cloud Console
 GOOGLE_CLIENT_SECRET=     # From Google Cloud Console
 DATABASE_URL=             # Neon PostgreSQL connection string

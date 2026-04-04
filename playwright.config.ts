@@ -6,7 +6,11 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 0,
   workers: 1,
-  reporter: [['list'], ['json', { outputFile: '.protocol-builder/e2e-results.json' }]],
+  reporter: [
+    ['list'],
+    ['json', { outputFile: '.protocol-builder/e2e-report/playwright-report.json' }],
+    ['html', { open: 'never', outputFolder: '.protocol-builder/e2e-report/html' }],
+  ],
   use: {
     baseURL: 'http://localhost:3001',
     trace: 'on-first-retry',

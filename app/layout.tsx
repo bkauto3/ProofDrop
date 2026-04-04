@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://proofdrop.com',
+    url: 'https://proofdrop.pro',
     siteName: 'ProofDrop',
     title: 'ProofDrop — AIVS Proof Bundle Verification',
     description: 'Turn any AIVS proof bundle into a permanent, tamper-evident receipt URL in seconds.',

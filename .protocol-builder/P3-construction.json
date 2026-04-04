@@ -1,0 +1,14 @@
+{
+  "phase": "P3",
+  "site": "proofdrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T22:10:00.000Z",
+  "package": "@protocol-factory/site-proofdrop",
+  "code_root": "sites/BUILT/proofdrop",
+  "highlights": [
+    "Next.js 15 App Router",
+    "@protocol-factory/protocol-verifier integration",
+    "Lazy Stripe client per monorepo guardrails"
+  ],
+  "notes": "Construction complete in BUILT tree; workspace linked via root package.json workspaces entry sites/BUILT/*."
+}

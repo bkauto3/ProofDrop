@@ -1,0 +1,6 @@
+{
+  "site": "proofdrop",
+  "checked": "2026-03-31T22:15:00.000Z",
+  "status": "skipped",
+  "reason": "stripe_mcp_checker.py not present in monorepo; validate Stripe keys in Vercel and Dashboard manually before live billing changes."
+}

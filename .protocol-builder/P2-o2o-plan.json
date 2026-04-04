@@ -1,0 +1,14 @@
+{
+  "phase": "P2",
+  "site": "proofdrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T22:10:00.000Z",
+  "task_graph_summary": {
+    "foundation": ["Neon schema", "NextAuth Google", "middleware"],
+    "core": ["AIVS verify API", "receipt persistence", "public /receipt/[id]"],
+    "billing": ["Stripe checkout", "webhook", "pricing page", "portal"],
+    "polish": ["SEO", "rate limits", "security headers", "export"]
+  },
+  "reference_docs": ["sites/BUILT/proofdrop/CHUNKS.md", "sites/BUILT/proofdrop/BUILD_SPEC.md"],
+  "notes": "Formal task_graph.json not generated; CHUNKS.md captures execution DAG equivalent."
+}

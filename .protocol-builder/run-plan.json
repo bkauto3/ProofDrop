@@ -1,0 +1,8 @@
+{
+  "site": "proofdrop",
+  "compiled": "2026-03-31T22:15:00.000Z",
+  "source": "protocol-website-builder-backfill",
+  "phases": ["P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8"],
+  "preflight": "Spec path: BrainStorm Spec .Json Platforms/01-proofdrop_BRAINSTORM_SPEC.json",
+  "abort_criteria": ["spec validation failure", "P5 pass rate < 100%", "P4 score < 88%"]
+}

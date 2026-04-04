@@ -14,7 +14,7 @@ export async function POST() {
   }
 
   const email = session.user!.email!
-  const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.com'
+  const baseUrl = process.env.NEXTAUTH_URL ?? 'https://proofdrop.pro'
 
   try {
     const sql = getDb()

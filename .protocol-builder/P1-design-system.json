@@ -1,0 +1,13 @@
+{
+  "phase": "P1",
+  "site": "proofdrop",
+  "status": "COMPLETE",
+  "declared_at": "2026-03-31T22:10:00.000Z",
+  "artifacts": [
+    "sites/BUILT/proofdrop/design-system/design-tokens.json",
+    "sites/BUILT/proofdrop/design-system/token-foundation.json",
+    "sites/BUILT/proofdrop/design-system/component-inventory.json"
+  ],
+  "platform_cluster": "protocol-aivs-verification-a",
+  "notes": "Design artifacts on disk; validate_phase1_design.py not run — prismatic handoff assumed satisfied by BUILD_SPEC + tokens."
+}

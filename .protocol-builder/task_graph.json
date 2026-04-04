@@ -1,0 +1,69 @@
+{
+  "site": "proofdrop",
+  "generated_at": "2026-03-28",
+  "phase": "P2-o2o",
+  "chunks": 6,
+  "nodes": [
+    {
+      "id": "C1",
+      "name": "Foundation",
+      "description": "Database schema, NextAuth Google OAuth, root layout, middleware, health check",
+      "dependencies": [],
+      "outputs": ["app/layout.tsx", "app/globals.css", "lib/db.ts", "lib/auth.ts", "middleware.ts", "app/api/health/route.ts"],
+      "agent": "ralph-wiggum-loop",
+      "priority": "critical",
+      "risk": "REVERSIBLE"
+    },
+    {
+      "id": "C2",
+      "name": "AIVS Verification Core",
+      "description": "POST /api/verify, VerifierWidget, receipt generation from bundle hash",
+      "dependencies": ["C1"],
+      "outputs": ["app/api/verify/route.ts", "components/verifier/verifier-widget.tsx", "components/receipt/receipt-card.tsx"],
+      "agent": "ralph-wiggum-loop",
+      "priority": "critical",
+      "risk": "REVERSIBLE"
+    },
+    {
+      "id": "C3",
+      "name": "Receipt Storage + Public View",
+      "description": "GET /api/receipts/[id], /receipt/[id] public page",
+      "dependencies": ["C1", "C2"],
+      "outputs": ["app/receipt/[id]/page.tsx", "app/api/receipts/[id]/route.ts"],
+      "agent": "ralph-wiggum-loop",
+      "priority": "critical",
+      "risk": "REVERSIBLE"
+    },
+    {
+      "id": "C4",
+      "name": "Stripe + Billing",
+      "description": "Lazy Stripe client, webhook, checkout, billing portal, pricing page",
+      "dependencies": ["C1"],
+      "outputs": ["lib/stripe.ts", "app/api/stripe/checkout/route.ts", "app/api/stripe/webhook/route.ts", "app/pricing/page.tsx"],
+      "agent": "ralph-wiggum-loop",
+      "priority": "high",
+      "risk": "PARTIALLY_REVERSIBLE"
+    },
+    {
+      "id": "C5",
+      "name": "Landing Page + Marketing Pages",
+      "description": "Full homepage, /about, /pricing, 404, sitemap.xml, robots.txt",
+      "dependencies": ["C1", "C2", "C3", "C4"],
+      "outputs": ["app/page.tsx", "app/about/page.tsx", "app/not-found.tsx", "app/sitemap.ts"],
+      "agent": "ralph-wiggum-loop",
+      "priority": "high",
+      "risk": "REVERSIBLE"
+    },
+    {
+      "id": "C6",
+      "name": "Dashboard + API + Export + Polish",
+      "description": "Authenticated dashboard, receipt history, export, all remaining API routes, responsive + a11y polish",
+      "dependencies": ["C1", "C2", "C3", "C4"],
+      "outputs": ["app/dashboard/page.tsx", "app/api/user/receipts/route.ts", "app/api/user/account/route.ts"],
+      "agent": "ralph-wiggum-loop",
+      "priority": "high",
+      "risk": "REVERSIBLE"
+    }
+  ],
+  "critical_path": ["C1", "C2", "C3", "C5"]
+}

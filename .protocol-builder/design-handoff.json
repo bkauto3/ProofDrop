@@ -1,0 +1,136 @@
+{
+  "site": "proofdrop",
+  "status": "READY",
+  "translated_at": "2026-03-28T20:28:31.266060+00:00",
+  "source_skill": "prismatic-design",
+  "artifact_contract": "A1-A5/B1-B6",
+  "design_system_dir": "sites/proofdrop/design-system",
+  "artifacts": {
+    "tokens_css": "sites/proofdrop/design-system/tokens.css",
+    "tailwind_theme_js": "sites/proofdrop/design-system/tailwind-theme.js",
+    "typography_md": "sites/proofdrop/design-system/typography.md",
+    "color_palette_md": "sites/proofdrop/design-system/color-palette.md",
+    "component_spec_md": "sites/proofdrop/design-system/component-spec.md",
+    "globals_css": "sites/proofdrop/design-system/globals.css",
+    "tailwind_config_ts": "sites/proofdrop/design-system/tailwind.config.ts",
+    "design_tokens_json": "sites/proofdrop/design-system/design-tokens.json",
+    "component_library_map_md": "sites/proofdrop/design-system/component-library-map.md",
+    "brand_voice_md": "sites/proofdrop/design-system/brand-voice.md",
+    "logo_spec_md": "sites/proofdrop/design-system/logo-spec.md"
+  },
+  "missing_artifacts": [],
+  "brand": {
+    "name": "proof sealed and dropped",
+    "primary_hue": 220,
+    "logo_concept": "ProofDrop's logo communicates tamper-evidence, cryptographic trust, and instant clarity. The mark combines a shield or drop shape with a checkmark \u2014 representing the \"proof sealed and dropped\" moment. The blue-600 primary color (#2563EB) grounds the identity in professional trust and technical precision, echoing financial services and legal-tech visual language.",
+    "favicon_spec": "16\u00d716 and 32\u00d732: Just the shield-drop mark in blue-600 (#2563EB) on transparent background. For ICO file: include 16\u00d716, 32\u00d732, and 48\u00d748. Apple touch icon (180\u00d7180): Full mark centered on white rounded background with 20px padding.",
+    "tone": "Precise, Clear, Professional"
+  },
+  "implementation_targets": [
+    {
+      "target": "sites/proofdrop/components/brand/site-logo.tsx",
+      "required": true,
+      "sources": [
+        "sites/proofdrop/design-system/logo-spec.md"
+      ],
+      "task": "Create a site-local logo component from the logo specification or logo-studio output."
+    },
+    {
+      "target": "sites/proofdrop/components/nav/site-nav.tsx",
+      "required": true,
+      "sources": [
+        "sites/proofdrop/design-system/logo-spec.md",
+        "sites/proofdrop/design-system/component-library-map.md"
+      ],
+      "task": "Replace any shared generic brand mark with the site-local logo and brand copy."
+    },
+    {
+      "target": "sites/proofdrop/components/footer/site-footer.tsx",
+      "required": true,
+      "sources": [
+        "sites/proofdrop/design-system/logo-spec.md",
+        "sites/proofdrop/design-system/brand-voice.md"
+      ],
+      "task": "Integrate the site-local logo, wordmark, and brand voice into the footer."
+    },
+    {
+      "target": "sites/proofdrop/app/globals.css",
+      "required": true,
+      "sources": [
+        "sites/proofdrop/design-system/globals.css",
+        "sites/proofdrop/design-system/tokens.css"
+      ],
+      "task": "Wire translated tokens, typography, and global utility classes into the app stylesheet."
+    },
+    {
+      "target": "sites/proofdrop/tailwind.config.ts",
+      "required": true,
+      "sources": [
+        "sites/proofdrop/design-system/tailwind.config.ts",
+        "sites/proofdrop/design-system/tailwind-theme.js"
+      ],
+      "task": "Apply the translated Tailwind theme so runtime styling matches the design system."
+    },
+    {
+      "target": "sites/proofdrop/.protocol-builder/design-handoff.json",
+      "required": true,
+      "sources": [
+        "sites/proofdrop/design-system/design-tokens.json",
+        "sites/proofdrop/design-system/component-spec.md"
+      ],
+      "task": "Persist the normalized design contract for downstream planning and validation."
+    }
+  ],
+  "route_component_map": [
+    {
+      "route": "/",
+      "surfaces": [
+        "Hero Section",
+        "Verifier Widget",
+        "Feature Grid",
+        "Pricing Preview"
+      ]
+    },
+    {
+      "route": "/receipt/[id]",
+      "surfaces": [
+        "Receipt Header",
+        "Receipt Body",
+        "Audit Timeline",
+        "Raw Bundle",
+        "Actions"
+      ]
+    },
+    {
+      "route": "/dashboard",
+      "surfaces": [
+        "Account Summary",
+        "Receipt Table",
+        "Pagination",
+        "Billing"
+      ]
+    },
+    {
+      "route": "/pricing",
+      "surfaces": [
+        "Billing Toggle",
+        "Pricing Cards"
+      ]
+    },
+    {
+      "route": "/about",
+      "surfaces": [
+        "Content",
+        "SiteNav",
+        "SiteFooter",
+        "Authentication"
+      ]
+    }
+  ],
+  "validation_requirements": [
+    "A site-local logo component must exist and replace any generic shared badge.",
+    "Navigation, footer, and layout surfaces must import the site-local brand assets.",
+    "Translated tokens and typography must be wired into runtime CSS and Tailwind config.",
+    "Phase 2 planning must consume this handoff file, not raw design docs alone."
+  ]
+}

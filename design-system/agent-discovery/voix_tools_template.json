@@ -1,0 +1,215 @@
+{
+  "voix_framework_version": "1.0",
+  "website": "ProofDrop",
+  "url": "https://proofdrop.pro",
+  "generated": "2026-04-01T12:28:59.339156+00:00",
+  "curation_status": "TEMPLATE - requires Jules agent curation before Phase 3 construction",
+  "curation_instructions": "Review each tool. Confirm name, description, and props match real UI interactions. Remove tools that do not map to real features. Add missing tools for key user journeys. Tools are discovered by the VOIX Chrome extension and presented to AI agents.",
+  "tools": [
+    {
+      "name": "search_results",
+      "description": "Search or filter aivs proof bundle verification in ProofDrop.",
+      "props": [
+        {
+          "name": "query",
+          "type": "string",
+          "required": true,
+          "description": "Search query or filter keyword."
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": false,
+          "description": "Optional status filter (e.g. PASS, FAIL, all)."
+        }
+      ],
+      "example_prompt": "Search for recent aivs proof bundle verification",
+      "html_element": "<tool name=\"search_results\"><prop name=\"query\" type=\"string\" required=\"true\">Search query</prop><prop name=\"status\" type=\"string\">Status filter</prop></tool>",
+      "curation_note": "CUSTOMIZE: update to match actual search/filter UI in ProofDrop."
+    },
+    {
+      "name": "aivs_proof_bundle_verification",
+      "description": "Access the AIVS proof bundle verification feature: Accept JSON paste or file upload; validate AIVS schema with Zod; run deterministic PASS/FAIL verification using @protoco",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "description": "Optional ID to open a specific aivs proof bundle verification record."
+        }
+      ],
+      "example_prompt": "Show me aivs proof bundle verification",
+      "html_element": "<tool name=\"aivs_proof_bundle_verification\"><prop name=\"id\" type=\"string\">Record ID (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: wire to the actual AIVS proof bundle verification UI component. Add/remove props to match real inputs."
+    },
+    {
+      "name": "permanent_tamper_evident_receipt",
+      "description": "Access the Permanent tamper-evident receipt feature: Derive receipt ID deterministically from bundle hash (rcpt_ + first 32 hex chars of SHA-256). Same bundle always produce",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "description": "Optional ID to open a specific permanent tamper-evident receipt record."
+        }
+      ],
+      "example_prompt": "Show me permanent tamper-evident receipt",
+      "html_element": "<tool name=\"permanent_tamper_evident_receipt\"><prop name=\"id\" type=\"string\">Record ID (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: wire to the actual Permanent tamper-evident receipt UI component. Add/remove props to match real inputs."
+    },
+    {
+      "name": "public_read_only_receipt_page___receipt_",
+      "description": "Access the Public read-only receipt page (/receipt/[id]) feature: No auth required. Shows PASS/FAIL badge, bundle ID, content hash, audit timeline (captured/verified/receipt created), ve",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "description": "Optional ID to open a specific public read-only receipt page (/receipt/[id]) record."
+        }
+      ],
+      "example_prompt": "Show me public read-only receipt page (/receipt/[id])",
+      "html_element": "<tool name=\"public_read_only_receipt_page___receipt_\"><prop name=\"id\" type=\"string\">Record ID (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: wire to the actual Public read-only receipt page (/receipt/[id]) UI component. Add/remove props to match real inputs."
+    },
+    {
+      "name": "google_oauth_sign_in",
+      "description": "Access the Google OAuth sign-in feature: Optional sign-in with Google via NextAuth.js. Signed-in users get receipt history saved, higher rate limits, and access ",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "description": "Optional ID to open a specific google oauth sign-in record."
+        }
+      ],
+      "example_prompt": "Show me google oauth sign-in",
+      "html_element": "<tool name=\"google_oauth_sign_in\"><prop name=\"id\" type=\"string\">Record ID (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: wire to the actual Google OAuth sign-in UI component. Add/remove props to match real inputs."
+    },
+    {
+      "name": "dashboard___receipt_history",
+      "description": "Access the Dashboard — receipt history feature: Authenticated users see paginated table of all their receipts: ID, status badge, date, view/export actions. Protected ro",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "description": "Optional ID to open a specific dashboard — receipt history record."
+        }
+      ],
+      "example_prompt": "Show me dashboard — receipt history",
+      "html_element": "<tool name=\"dashboard___receipt_history\"><prop name=\"id\" type=\"string\">Record ID (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: wire to the actual Dashboard — receipt history UI component. Add/remove props to match real inputs."
+    },
+    {
+      "name": "get_pricing",
+      "description": "Get pricing information and plan details for ProofDrop.",
+      "props": [
+        {
+          "name": "plan",
+          "type": "enum",
+          "required": false,
+          "description": "Plan tier to query. Options: Free, Starter, Pro, Enterprise."
+        }
+      ],
+      "example_prompt": "What are your pricing plans?",
+      "html_element": "<tool name=\"get_pricing\"><prop name=\"plan\" type=\"enum\">Plan tier (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: confirm plan names match Stripe products."
+    },
+    {
+      "name": "start_trial",
+      "description": "Initiate sign-up or free trial for ProofDrop.",
+      "props": [
+        {
+          "name": "plan",
+          "type": "string",
+          "required": false,
+          "description": "Optional plan to pre-select (e.g. starter, pro)."
+        }
+      ],
+      "example_prompt": "Sign me up for a free trial",
+      "html_element": "<tool name=\"start_trial\"><prop name=\"plan\" type=\"string\">Pre-select plan (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: link to the signup page or trigger the sign-in modal."
+    },
+    {
+      "name": "get_help",
+      "description": "Get help, documentation, or support for ProofDrop.",
+      "props": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "description": "Topic or feature to get help with."
+        }
+      ],
+      "example_prompt": "How do I export my data?",
+      "html_element": "<tool name=\"get_help\"><prop name=\"topic\" type=\"string\">Help topic (optional)</prop></tool>",
+      "curation_note": "CUSTOMIZE: open help docs, chat widget, or FAQ page."
+    }
+  ],
+  "context_elements": [
+    {
+      "name": "user_session",
+      "description": "Current authenticated user session state (PUBLIC data only).",
+      "exposed_fields": [
+        {
+          "name": "is_authenticated",
+          "type": "boolean",
+          "description": "Whether the user is signed in."
+        },
+        {
+          "name": "subscription_tier",
+          "type": "string",
+          "description": "User plan (free, starter, pro, enterprise)."
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "description": "User display name - never email or user ID."
+        }
+      ],
+      "html_element": "<context name=\"user_session\">{json}</context>",
+      "security": "NEVER expose: API keys, passwords, tokens, payment data, raw user IDs."
+    },
+    {
+      "name": "page_context",
+      "description": "Public metadata about the current page (route, visible features).",
+      "exposed_fields": [
+        {
+          "name": "route",
+          "type": "string",
+          "description": "Current URL path."
+        },
+        {
+          "name": "available_tools",
+          "type": "array",
+          "description": "List of tool names active on this page."
+        }
+      ],
+      "html_element": "<context name=\"page_context\">{json}</context>",
+      "security": "Only public, non-sensitive metadata."
+    }
+  ],
+  "ai_provider_support": {
+    "primary": [
+      "claude-sonnet-4-5",
+      "gpt-4o"
+    ],
+    "secondary": [
+      "gemini-2.0-flash",
+      "perplexity-pro"
+    ],
+    "note": "All tools work across providers. Primary providers cover ~80% of agent traffic."
+  },
+  "security_notes": [
+    "All tools execute client-side via the user VOIX browser extension.",
+    "No server-side tracking of AI agent interactions.",
+    "Context elements must contain PUBLIC data only - never credentials or PII.",
+    "Users control which AI provider sees their context data."
+  ],
+  "references": {
+    "voix_docs": "https://github.com/svenschultze/VOIX",
+    "chrome_extension": "https://chromewebstore.google.com/detail/voix/agmhpolimgfdfnlgciajhbkdapkophie"
+  }
+}
