@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
 import { computeReceiptId, computeBundleHash } from '@/lib/receipt-id'
 import { getOptionalSession } from '@/lib/auth-helpers'
-import { verifyAIVSBundle } from '@protocol-factory/protocol-verifier'
-import type { AIVSBundle } from '@protocol-factory/protocol-verifier'
+import { verifyAIVSBundle } from '@/lib/aivs/verifier'
+import type { AIVSBundle } from '@/lib/aivs/types'
 import { dispatchWebhookEvent } from '@/lib/webhook-dispatcher'
 
 // In-memory rate limiting store: key -> { count, resetAt }
