@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
             "style-src 'self' 'unsafe-inline' https://accounts.google.com",
             "img-src 'self' data: https:",
             "font-src 'self'",
-            "frame-src https://js.stripe.com https://hooks.stripe.com https://checkout.stripe.com https://accounts.google.com",
+            "frame-src https://js.stripe.com https://hooks.stripe.com https://checkout.stripe.com https://accounts.google.com https://vercel.live",
             "connect-src 'self' https://api.stripe.com https://checkout.stripe.com https://accounts.google.com https://oauth2.googleapis.com",
             "object-src 'none'",
             "base-uri 'self'",

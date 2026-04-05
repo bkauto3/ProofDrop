@@ -90,33 +90,34 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'User not found.' }, { status: 404 })
     }
 
-    // ── Rate limiting ─────────────────────────────────────────────────────
-    // Count checkout session creations for this user in the last hour.
-    // Uses processed_stripe_events as a lightweight audit log — no new table needed.
-    // We track checkout initiations separately via a naming convention.
-    const recentRows = (await sql`
-      SELECT COUNT(*) AS cnt
-      FROM processed_stripe_events
-      WHERE stripe_event_id LIKE ${'checkout-init-' + user.id + '-%'}
-        AND processed_at > NOW() - INTERVAL '1 hour'
-    `) as { cnt: string }[]
+    // ── Rate limiting (best-effort) ───────────────────────────────────────
+    // Wrapped in its own try/catch so a DB schema mismatch or transient error
+    // never blocks the checkout flow — rate limiting is a nice-to-have guard.
+    try {
+      const recentRows = (await sql`
+        SELECT COUNT(*) AS cnt
+        FROM processed_stripe_events
+        WHERE stripe_event_id LIKE ${'checkout-init-' + user.id + '-%'}
+          AND processed_at > NOW() - INTERVAL '1 hour'
+      `) as { cnt: string }[]
 
-    const recentCount = parseInt(recentRows[0]?.cnt ?? '0', 10)
-    if (recentCount >= CHECKOUT_RATE_LIMIT) {
-      return NextResponse.json(
-        { error: 'Too many checkout attempts. Please try again later.' },
-        { status: 429 },
-      )
+      const recentCount = parseInt(recentRows[0]?.cnt ?? '0', 10)
+      if (recentCount >= CHECKOUT_RATE_LIMIT) {
+        return NextResponse.json(
+          { error: 'Too many checkout attempts. Please try again later.' },
+          { status: 429 },
+        )
+      }
+
+      const initiationKey = `checkout-init-${user.id}-${Date.now()}`
+      await sql`
+        INSERT INTO processed_stripe_events (stripe_event_id, event_type)
+        VALUES (${initiationKey}, 'checkout.initiation')
+        ON CONFLICT (stripe_event_id) DO NOTHING
+      `
+    } catch (rlErr) {
+      console.warn('[stripe/checkout] rate-limit check failed (non-fatal):', rlErr)
     }
-
-    // Record this initiation attempt (non-blocking — use ON CONFLICT to handle
-    // the tiny race window where two concurrent requests pass the check above).
-    const initiationKey = `checkout-init-${user.id}-${Date.now()}`
-    await sql`
-      INSERT INTO processed_stripe_events (stripe_event_id, event_type)
-      VALUES (${initiationKey}, 'checkout.initiation')
-      ON CONFLICT (stripe_event_id) DO NOTHING
-    `
 
     let customerId = user.stripe_customer_id
 
